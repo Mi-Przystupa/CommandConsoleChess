@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ConsoleChess" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ConsoleChess" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="cygwin" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ConsoleChess" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="cygwin" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Bishop.cpp" />
+		<Unit filename="Bishop.h" />
+		<Unit filename="BlackChessPlayer.cpp" />
+		<Unit filename="BlackChessPlayer.h" />
+		<Unit filename="ChessBoard.cpp" />
+		<Unit filename="ChessBoard.h" />
+		<Unit filename="ChessGame.cpp" />
+		<Unit filename="ChessGame.h" />
+		<Unit filename="ChessPiece.cpp" />
+		<Unit filename="ChessPiece.h" />
+		<Unit filename="ChessPlayer.cpp" />
+		<Unit filename="ChessPlayer.h" />
+		<Unit filename="King.cpp" />
+		<Unit filename="King.h" />
+		<Unit filename="Knight.cpp" />
+		<Unit filename="Knight.h" />
+		<Unit filename="Pawn.cpp" />
+		<Unit filename="Pawn.h" />
+		<Unit filename="Queen.cpp" />
+		<Unit filename="Queen.h" />
+		<Unit filename="Rook.cpp" />
+		<Unit filename="Rook.h" />
+		<Unit filename="WhiteChessPlayer.cpp" />
+		<Unit filename="WhiteChessPlayer.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

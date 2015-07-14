@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1431722385 source:c:\users\gamerdecathlete\git\consolechess\chessboard.cpp
+	"ChessBoard.h"
+	<cctype>
+	<stdio.h>
+	<vector>
+
+1431377747 c:\users\gamerdecathlete\git\consolechess\chessboard.h
+	<vector>
+	"ChessPiece.h"
+
+1431722686 source:c:\users\gamerdecathlete\git\consolechess\main.cpp
+	<iostream>
+	"ChessBoard.h"
+	"ChessGame.h"
+	<stdio.h>
+
+1431128326 source:c:\users\gamerdecathlete\git\consolechess\pawn.cpp
+	"Pawn.h"
+
+1431116958 c:\users\gamerdecathlete\git\consolechess\pawn.h
+	"ChessPiece.h"
+	<string>
+
+1431127736 source:c:\users\gamerdecathlete\git\consolechess\chesspiece.cpp
+	"ChessPiece.h"
+
+1431127684 c:\users\gamerdecathlete\git\consolechess\chesspiece.h
+	<string>
+
+1431127435 source:c:\users\gamerdecathlete\git\consolechess\queen.cpp
+	"Queen.h"
+
+1431117105 c:\users\gamerdecathlete\git\consolechess\queen.h
+	"ChessPiece.h"
+
+1431378348 source:c:\users\gamerdecathlete\git\consolechess\blackchessplayer.cpp
+	"BlackChessPlayer.h"
+	"Pawn.h"
+	"Rook.h"
+	"King.h"
+	"Queen.h"
+	"Bishop.h"
+	"Knight.h"
+
+1431375307 c:\users\gamerdecathlete\git\consolechess\blackchessplayer.h
+	"ChessPlayer.h"
+	<vector>
+
+1431379148 c:\users\gamerdecathlete\git\consolechess\chessplayer.h
+	"ChessPiece.h"
+	<map>
+	<vector>
+
+1431379811 source:c:\users\gamerdecathlete\git\consolechess\chessplayer.cpp
+	"ChessPlayer.h"
+
+1431129903 source:c:\users\gamerdecathlete\git\consolechess\rook.cpp
+	"Rook.h"
+
+1431129888 c:\users\gamerdecathlete\git\consolechess\rook.h
+	"ChessPiece.h"
+
+1431131067 source:c:\users\gamerdecathlete\git\consolechess\bishop.cpp
+	"Bishop.h"
+
+1431130454 c:\users\gamerdecathlete\git\consolechess\bishop.h
+	"ChessPiece.h"
+
+1431130101 source:c:\users\gamerdecathlete\git\consolechess\knight.cpp
+	"Knight.h"
+
+1431130596 c:\users\gamerdecathlete\git\consolechess\knight.h
+	"ChessPiece.h"
+
+1431131011 source:c:\users\gamerdecathlete\git\consolechess\king.cpp
+	"King.h"
+
+1431130997 c:\users\gamerdecathlete\git\consolechess\king.h
+	"ChessPiece.h"
+
+1431722617 source:c:\users\gamerdecathlete\git\consolechess\chessgame.cpp
+	"ChessGame.h"
+	<iostream>
+
+1431378627 c:\users\gamerdecathlete\git\consolechess\chessgame.h
+	"ChessBoard.h"
+	"ChessPlayer.h"
+	"BlackChessPlayer.h"
+	"WhiteChessPlayer.h"
+
+1431378136 c:\users\gamerdecathlete\git\consolechess\whitechessplayer.h
+	"ChessPlayer.h"
+
+1431378478 source:c:\users\gamerdecathlete\git\consolechess\whitechessplayer.cpp
+	"WhiteChessPlayer.h"
+	"Pawn.h"
+	"Rook.h"
+	"King.h"
+	"Queen.h"
+	"Bishop.h"
+	"Knight.h"
+
