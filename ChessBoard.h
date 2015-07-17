@@ -15,12 +15,12 @@ class ChessBoard
         virtual ~ChessBoard();
         void MovePiece(int xs, int ys, int xnew, int ynew);
         void displayBoard();
-        char** GetBoard();
+        ChessPiece*** GetBoard();
         char getCell(int x, int y);
 
     private:
-        char** m_board;
-        char** IntializeBoard();
+        ChessPiece*** m_board;
+        ChessPiece*** IntializeBoard();
 
 };
 

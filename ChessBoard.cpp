@@ -2,6 +2,7 @@
 #include <cctype>
 #include <stdio.h>
 #include <vector>
+#include "include/EmptyPiece.h"
 
 ChessBoard::ChessBoard()
 {
@@ -17,7 +18,7 @@ ChessBoard::ChessBoard(std::vector<ChessPiece*> putOnboard){
 
     while (iterator != putOnboard.end()){
         position_t coordinates = (*iterator)->GetPosition();
-        m_board[coordinates.y][coordinates.x] = (*iterator)->GetSymbol();
+  //      m_board[coordinates.y][coordinates.x] = *iterator;
         iterator++;
     }
 }
@@ -28,25 +29,25 @@ ChessBoard::~ChessBoard()
     delete m_board;
 }
 
-char** ChessBoard::IntializeBoard(){
-	char** board = new char*[boardHeight];
+ChessPiece*** ChessBoard::IntializeBoard(){
+	ChessPiece*** board = new ChessPiece**[boardHeight];
 
 	for(int h = 0; h < boardHeight; h++){
-		board[h] = new char[boardWidth];
+		board[h] = new ChessPiece*[boardWidth];
 	}
 
 	for (int h = 0; h < boardHeight; h++){
 		for(int w = 0; w < boardWidth;w++){
-			board[h][w] = '_';
+			board[h][w] = new EmptyPiece(h,w);
 		}
 	}
 	return board;
 }
 void ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
 	m_board[xnew][ynew] = m_board[xs][ys];
-	m_board[xs][ys] = '_';
+	//m_board[xs][ys] = '_';
 }
-char** ChessBoard::GetBoard(){
+ChessPiece*** ChessBoard::GetBoard(){
 	return m_board;
 }
 
@@ -60,5 +61,5 @@ void ChessBoard::displayBoard(){
 }
 
 char ChessBoard::getCell(int x, int y){
-    return m_board[x][y];
+    return m_board[x][y]->GetSymbol();
 }

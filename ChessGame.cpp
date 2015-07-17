@@ -1,5 +1,7 @@
 #include "ChessGame.h"
 #include <iostream>
+#include <string>
+#include <stdlib.h>
 
 ChessGame::ChessGame()
 {
@@ -29,18 +31,26 @@ ChessGame::~ChessGame()
 
 void ChessGame::GetConsoleInput(){
 
-    position_t original;
     position_t newposition;
-    std::cout << "We Require coordinates" << std::endl;
-    std::cout << "X coordinate" << std::endl;
-    std::cin >> original.x;
-    std::cout << "Y coordinate" << std::endl;
-    std::cin >> original.y;
+    std::string coordinate;
+    std::string pieceName;
 
-    std::cout << "X coordinate" << std::endl;
-    std::cin >> newposition.x;
-    std::cout << "Y coordinate" << std::endl;
-    std::cin >> newposition.y;
+    std::cout << "Select a piece" << std::endl;
+    std::cin >> pieceName;
+
+    std::cout << "We Require coordinates" << std::endl;
+    std::cin >> coordinate;
+
+    try {
+        std::string xcord = coordinate.substr(1,2);
+        std::string ycord = coordinate.substr(0, 1);
+
+        newposition.x = atoi(xcord.c_str());
+        newposition.y = atoi(ycord.c_str());
+
+    } catch(std::exception e) {
+        std::cout << "You messed up " << std::endl;
+    }
 
     /*
         Coordinates are backwards,
@@ -49,7 +59,7 @@ void ChessGame::GetConsoleInput(){
         so: (x,y) refers to indexs [y][x]
     */
 
-    m_ptrChessBoard->MovePiece(original.x, original.y, newposition.x,newposition.y);
+    m_ptrChessBoard->MovePiece(0, 0, newposition.x,newposition.y);
 
 }
 

@@ -15,7 +15,8 @@ enum PieceType {
     knight,
     bishop,
     king,
-    queen
+    queen,
+    emptycell
 };
 
 class ChessPiece
