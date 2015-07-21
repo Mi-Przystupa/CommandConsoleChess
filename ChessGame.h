@@ -6,6 +6,7 @@
 #include "BlackChessPlayer.h"
 #include "WhiteChessPlayer.h"
 
+
 class ChessGame
 {
     public:
@@ -22,7 +23,11 @@ class ChessGame
         ChessBoard* m_ptrChessBoard;
         ChessPlayer* m_ptrCurrentPlayer;
         position_t m_coordinates;
+        bool m_currentPlayerIsBlack;
 
+        void DisplayRequestedPieces(char piece);
+        void DisplayCoordinates(position_t p);
+        std::string GetPieceCoordinatesString(int index,char pieceName);
 };
 
 #endif // CHESSGAME_H

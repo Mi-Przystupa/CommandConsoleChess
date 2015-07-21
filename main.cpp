@@ -11,6 +11,5 @@ int main(int argc, const char* argv[]){
 	chessGame.DisplayBoard();
 //	}
     chessGame.GetConsoleInput();
-    chessGame.DisplayBoard();
 	return 0;
 }

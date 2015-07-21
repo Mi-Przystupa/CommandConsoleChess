@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -22,6 +23,7 @@
 				<Option compiler="cygwin" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -56,7 +58,9 @@
 		<Unit filename="Rook.h" />
 		<Unit filename="WhiteChessPlayer.cpp" />
 		<Unit filename="WhiteChessPlayer.h" />
+		<Unit filename="include/EmptyPiece.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/EmptyPiece.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

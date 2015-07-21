@@ -22,3 +22,19 @@ std::vector<ChessPiece*> ChessPlayer::getAllPieces(){
     }
     return ret;
 }
+
+std::vector<ChessPiece*> ChessPlayer::GetAvailableRequestedPieces(char piece){
+    std::vector<ChessPiece*> playersPieces(m_availablePieces[piece]);
+    std::vector<ChessPiece*> availablePieces;
+
+    std::vector<ChessPiece*>::iterator iter = playersPieces.begin();
+    while (iter != playersPieces.end()){
+       if ((*iter)->GetIsAvailable())
+       {
+            availablePieces.push_back(*iter);
+       }
+       iter++;
+    }
+
+    return availablePieces;
+}

@@ -2,7 +2,7 @@
 
 ChessPiece::ChessPiece()
 {
-
+   m_isAvailable = true;
 }
 
 ChessPiece::ChessPiece(int x, int y, char s){
@@ -18,5 +18,9 @@ position_t ChessPiece::GetPosition(){
 void ChessPiece::SetPosition(int x, int y){
     m_position.x = x;
     m_position.y = y;
+}
+
+bool ChessPiece::GetIsAvailable() {
+    return m_isAvailable;
 }
 

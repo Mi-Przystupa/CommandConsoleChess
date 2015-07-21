@@ -18,7 +18,7 @@ ChessBoard::ChessBoard(std::vector<ChessPiece*> putOnboard){
 
     while (iterator != putOnboard.end()){
         position_t coordinates = (*iterator)->GetPosition();
-  //      m_board[coordinates.y][coordinates.x] = *iterator;
+        m_board[coordinates.y][coordinates.x] = *iterator;
         iterator++;
     }
 }
@@ -45,7 +45,6 @@ ChessPiece*** ChessBoard::IntializeBoard(){
 }
 void ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
 	m_board[xnew][ynew] = m_board[xs][ys];
-	//m_board[xs][ys] = '_';
 }
 ChessPiece*** ChessBoard::GetBoard(){
 	return m_board;
@@ -54,9 +53,9 @@ ChessPiece*** ChessBoard::GetBoard(){
 void ChessBoard::displayBoard(){
     for (int i = 0; i < boardHeight;i++){
         for(int j = 0; j < boardWidth; j++){
-            printf("%c", m_board[i][j]);
+            printf("%c", m_board[i][j]->GetSymbol());
         }
-        printf("%\n");
+        printf("\n");
 	}
 }
 

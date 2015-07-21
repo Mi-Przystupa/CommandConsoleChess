@@ -22,7 +22,7 @@ void WhiteChessPlayer::InitializeWhitePieces(){
 
    for (int i = 0; i < 8; i++){
         ChessPiece* pawn = new Pawn(i,1, "White");
-        m_availablePieces['P'].push_back(pawn);
+        m_availablePieces['p'].push_back(pawn);
    }
    for (int i = 0; i < 8; i++){
         ChessPiece* addToBoard = PieceIndex(i);
@@ -32,7 +32,7 @@ void WhiteChessPlayer::InitializeWhitePieces(){
 }
 
 ChessPiece* WhiteChessPlayer::PieceIndex(int j){
-    if(j == 0 || j== 0){
+    if(j == 0 || j== 7){
         return new Rook(j, 0, "White");
     }
      if(j == 1 || j== 6){

@@ -26,11 +26,13 @@ protected:
     ChessPiece(int x, int y, char s);
 	position_t m_position;
 	char m_symbol;
+	bool m_isAvailable;
 
 public:
 	char GetSymbol();
     position_t GetPosition();
     void SetPosition(int x, int y);
+    bool GetIsAvailable();
 
     virtual PieceType GetPieceType() = 0;
 
