@@ -144,7 +144,7 @@
 1436917589 c:\users\michaels\git\commandconsolechess\knight.h
 	"ChessPiece.h"
 
-1437515273 source:c:\users\michaels\git\commandconsolechess\chessboard.cpp
+1437545744 source:c:\users\michaels\git\commandconsolechess\chessboard.cpp
 	"ChessBoard.h"
 	<cctype>
 	<stdio.h>
@@ -155,7 +155,7 @@
 	<vector>
 	"ChessPiece.h"
 
-1437515369 source:c:\users\michaels\git\commandconsolechess\chessgame.cpp
+1437544624 source:c:\users\michaels\git\commandconsolechess\chessgame.cpp
 	"ChessGame.h"
 	<iostream>
 	<string>

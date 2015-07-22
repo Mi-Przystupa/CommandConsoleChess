@@ -50,25 +50,25 @@ void ChessGame::GetConsoleInput(){
     std::cout << "Which piece Do you want to move?" << std::endl;
     int index;
     std :: cin >> index;
-    std::cout << "Where do you want to move the piece " << GetPieceCoordinatesString(index, pieceName) << "to?" << std::endl;
-    std::cin >> coordinate;
 
-    std::cout << coordinate << std::endl;
-
-/*    std::cout << "We Require coordinates" << std::endl;
+    ChessPiece* selectedPiece = m_ptrCurrentPlayer->GetAvailableRequestedPieces(pieceName)[index];
+    std::cout << "Where do you want to move the piece" << GetPieceCoordinatesString(index, pieceName) << " to? (e.g. 3,4) " << std::endl;
     std::cin >> coordinate;
 
     try {
-        std::string xcord = coordinate.substr(1,2);
-        std::string ycord = coordinate.substr(0, 1);
+
+        //the format must be "x,y" so is of length 3
+        std::cout << coordinate.size() << std::endl;
+        std::cout << coordinate << std::endl;
+        std::string xcord = coordinate.substr(0,2);
+        std::string ycord = coordinate.substr(2, 4);
 
         newposition.x = atoi(xcord.c_str());
         newposition.y = atoi(ycord.c_str());
-
     } catch(std::exception e) {
         std::cout << "You messed up " << std::endl;
     }
-*/
+
 
     /*
         Coordinates are backwards,
@@ -77,8 +77,8 @@ void ChessGame::GetConsoleInput(){
         so: (x,y) refers to indexs [y][x]
     */
 
-//    m_ptrChessBoard->MovePiece(0, 0, newposition.x,newposition.y);
-
+    m_ptrChessBoard->MovePiece(selectedPiece->GetPosition().x, selectedPiece->GetPosition().y, newposition.x,newposition.y);
+    DisplayBoard();
 }
 
 void ChessGame::SwitchPlayer(){

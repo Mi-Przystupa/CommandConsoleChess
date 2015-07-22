@@ -44,7 +44,13 @@ ChessPiece*** ChessBoard::IntializeBoard(){
 	return board;
 }
 void ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
-	m_board[xnew][ynew] = m_board[xs][ys];
+    ChessPiece* pieceMoving = m_board[ys][xs];
+    printf("%c this is the character for the piece to be moved\n", pieceMoving->GetSymbol());
+
+    printf("%c this is the character\n", m_board[ynew][xnew]->GetSymbol());
+	m_board[ynew][xnew] = pieceMoving;
+	printf("%c this is the character\n", m_board[ynew][xnew]->GetSymbol());
+
 }
 ChessPiece*** ChessBoard::GetBoard(){
 	return m_board;
