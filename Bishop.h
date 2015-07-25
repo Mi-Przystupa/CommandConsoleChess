@@ -10,6 +10,7 @@ class Bishop : public ChessPiece
         Bishop(int x, int y, std::string side);
         virtual ~Bishop();
         PieceType GetPieceType();
+        std::vector<position_t> GetValidMoves();
 };
 
 #endif // BISHOP_H

@@ -43,15 +43,27 @@ ChessPiece*** ChessBoard::IntializeBoard(){
 	}
 	return board;
 }
-void ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
+//TODO: Should be passing in complext data
+bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
     ChessPiece* pieceMoving = m_board[ys][xs];
-    printf("%c this is the character for the piece to be moved\n", pieceMoving->GetSymbol());
 
-    printf("%c this is the character\n", m_board[ynew][xnew]->GetSymbol());
-	m_board[ynew][xnew] = pieceMoving;
-	printf("%c this is the character\n", m_board[ynew][xnew]->GetSymbol());
-
+    if (IsValidMove(pieceMoving, xnew, ynew)){
+        printf("of coarse it is friend");
+    } else {
+        printf("Why must you do this michael");
+    }
+	m_board[ynew][xnew];
+    return false;
 }
+
+bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
+
+    std::vector<position_t> validMoves(piece->GetValidMoves());
+
+    return false;
+}
+
+
 ChessPiece*** ChessBoard::GetBoard(){
 	return m_board;
 }

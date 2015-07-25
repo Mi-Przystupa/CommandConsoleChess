@@ -16,3 +16,12 @@ EmptyPiece::~EmptyPiece()
 PieceType EmptyPiece::GetPieceType(){
     return emptycell;
 }
+
+std::vector<position_t> EmptyPiece::GetValidMoves(){
+    std::vector<position_t> validMoves;
+
+
+
+
+    return validMoves;
+}

@@ -3,10 +3,21 @@
 #define CHESSPIECE_H
 
 #include <string>
+#include <vector>
 
 struct position_t{
 	int x;
 	int y;
+
+	position_t(int xcord, int ycord){
+        x = xcord;
+        y = ycord;
+	}
+	position_t(){
+        x = 0;
+        y = 0;
+	}
+
 };
 
 enum PieceType {
@@ -35,6 +46,7 @@ public:
     bool GetIsAvailable();
 
     virtual PieceType GetPieceType() = 0;
+    virtual std::vector<position_t> GetValidMoves() = 0;
 
 };
 #endif // CHESSPIECE_H

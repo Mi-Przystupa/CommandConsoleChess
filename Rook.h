@@ -10,6 +10,7 @@ class Rook : public ChessPiece
         Rook(int x, int y,std::string side);
         virtual ~Rook();
         PieceType GetPieceType();
+        std::vector<position_t> GetValidMoves();
 };
 
 #endif // ROOK_H

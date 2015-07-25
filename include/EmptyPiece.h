@@ -10,6 +10,7 @@ class EmptyPiece : public ChessPiece
         EmptyPiece(int x, int y );
         virtual ~EmptyPiece();
         PieceType GetPieceType();
+        std::vector<position_t> GetValidMoves();
 };
 
 #endif // EMPTYPIECE_H

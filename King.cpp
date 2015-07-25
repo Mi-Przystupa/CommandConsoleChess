@@ -15,3 +15,12 @@ King::~King()
 PieceType King::GetPieceType() {
     return king;
 }
+
+std::vector<position_t> King::GetValidMoves(){
+    std::vector<position_t> validMoves;
+
+
+
+
+    return validMoves;
+}

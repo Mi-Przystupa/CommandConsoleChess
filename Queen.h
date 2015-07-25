@@ -11,6 +11,8 @@ class Queen : public ChessPiece
         ~Queen();
 
         PieceType GetPieceType();
+        std::vector<position_t> GetValidMoves();
+        std::vector<position_t> DiagonalMoves();
 };
 
 #endif // QUEEN_H

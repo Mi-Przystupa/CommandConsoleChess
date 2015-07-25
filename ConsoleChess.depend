@@ -101,14 +101,15 @@
 	"Bishop.h"
 	"Knight.h"
 
-1436917589 source:c:\users\michaels\git\commandconsolechess\bishop.cpp
+1437616047 source:c:\users\michaels\git\commandconsolechess\bishop.cpp
 	"Bishop.h"
 
-1436917589 c:\users\michaels\git\commandconsolechess\bishop.h
+1437614807 c:\users\michaels\git\commandconsolechess\bishop.h
 	"ChessPiece.h"
 
-1437508476 c:\users\michaels\git\commandconsolechess\chesspiece.h
+1437799849 c:\users\michaels\git\commandconsolechess\chesspiece.h
 	<string>
+	<vector>
 
 1436917589 source:c:\users\michaels\git\commandconsolechess\blackchessplayer.cpp
 	"BlackChessPlayer.h"
@@ -128,34 +129,34 @@
 	<map>
 	<vector>
 
-1436917589 c:\users\michaels\git\commandconsolechess\pawn.h
+1437689932 c:\users\michaels\git\commandconsolechess\pawn.h
 	"ChessPiece.h"
 	<string>
 
-1436917589 c:\users\michaels\git\commandconsolechess\rook.h
+1437691068 c:\users\michaels\git\commandconsolechess\rook.h
 	"ChessPiece.h"
 
-1436917589 c:\users\michaels\git\commandconsolechess\king.h
+1437799185 c:\users\michaels\git\commandconsolechess\king.h
 	"ChessPiece.h"
 
-1436917589 c:\users\michaels\git\commandconsolechess\queen.h
+1437799697 c:\users\michaels\git\commandconsolechess\queen.h
 	"ChessPiece.h"
 
-1436917589 c:\users\michaels\git\commandconsolechess\knight.h
+1437691347 c:\users\michaels\git\commandconsolechess\knight.h
 	"ChessPiece.h"
 
-1437545744 source:c:\users\michaels\git\commandconsolechess\chessboard.cpp
+1437799809 source:c:\users\michaels\git\commandconsolechess\chessboard.cpp
 	"ChessBoard.h"
 	<cctype>
 	<stdio.h>
 	<vector>
 	"include/EmptyPiece.h"
 
-1437091861 c:\users\michaels\git\commandconsolechess\chessboard.h
+1437614582 c:\users\michaels\git\commandconsolechess\chessboard.h
 	<vector>
 	"ChessPiece.h"
 
-1437544624 source:c:\users\michaels\git\commandconsolechess\chessgame.cpp
+1437546567 source:c:\users\michaels\git\commandconsolechess\chessgame.cpp
 	"ChessGame.h"
 	<iostream>
 	<string>
@@ -177,10 +178,10 @@
 1437510381 source:c:\users\michaels\git\commandconsolechess\chessplayer.cpp
 	"ChessPlayer.h"
 
-1436917589 source:c:\users\michaels\git\commandconsolechess\king.cpp
+1437799258 source:c:\users\michaels\git\commandconsolechess\king.cpp
 	"King.h"
 
-1436917589 source:c:\users\michaels\git\commandconsolechess\knight.cpp
+1437799901 source:c:\users\michaels\git\commandconsolechess\knight.cpp
 	"Knight.h"
 
 1437511604 source:c:\users\michaels\git\commandconsolechess\main.cpp
@@ -210,7 +211,7 @@
 1437091016 c:\users\michaels\git\commandconsolechess\src\emptypiece.cpp
 	"..\include\EmptyPiece.h"
 
-1437092613 c:\users\michaels\git\commandconsolechess\include\emptypiece.h
+1437799802 c:\users\michaels\git\commandconsolechess\include\emptypiece.h
 	"..\ChessPiece.h"
 
 1437091016 source:c:\users\michaels\git\commandconsolechess\src\emptypiece.cpp

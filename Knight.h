@@ -10,6 +10,7 @@ class Knight : public ChessPiece
         Knight(int x, int y, std::string side);
         virtual ~Knight();
         PieceType GetPieceType();
+        std::vector<position_t> GetValidMoves();
 };
 
 #endif // KNIGHT_H
