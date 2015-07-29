@@ -24,3 +24,6 @@ bool ChessPiece::GetIsAvailable() {
     return m_isAvailable;
 }
 
+void ChessPiece::SetIsAvailable(bool available){
+    m_isAvailable = available;
+}

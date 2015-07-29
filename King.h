@@ -11,6 +11,8 @@ class King : public ChessPiece
         virtual ~King();
         PieceType GetPieceType();
         std::vector<position_t> GetValidMoves();
+    private:
+        bool InBoundaries(int p);
 };
 
 #endif // KING_H

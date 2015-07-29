@@ -35,5 +35,5 @@ std::vector<position_t> Rook::GetValidMoves(){
         validMoves.push_back(position_t(i, m_position.y));
     }
 
-
+    return validMoves;
 }

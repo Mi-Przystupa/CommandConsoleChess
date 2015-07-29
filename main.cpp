@@ -6,10 +6,7 @@
 int main(int argc, const char* argv[]){
 	printf("Hello Board\n");
 	ChessGame chessGame;
-//	for(int i = 0; i < 3; i++){
-	//chessGame.GetConsoleInput();
-	chessGame.DisplayBoard();
-//	}
-    chessGame.GetConsoleInput();
+
+    chessGame.Execute();
 	return 0;
 }

@@ -13,10 +13,7 @@ class ChessGame
         ChessGame();
         virtual ~ChessGame();
 
-        void GetConsoleInput();
-        void DisplaySelectPieceMoves();
-        void DisplayBoard();
-        void SwitchPlayer();
+        void Execute();
     private:
         BlackChessPlayer* m_ptrBlackPlayer;
         WhiteChessPlayer* m_ptrWhitePlayer;
@@ -25,9 +22,18 @@ class ChessGame
         position_t m_coordinates;
         bool m_currentPlayerIsBlack;
 
-        void DisplayRequestedPieces(char piece);
+        bool DisplayRequestedPieces(char piece);
         void DisplayCoordinates(position_t p);
         std::string GetPieceCoordinatesString(int index,char pieceName);
+
+        bool GetConsoleInput();
+        void DisplaySelectPieceMoves();
+        void DisplayBoard();
+        void SwitchPlayer();
+        void DisplayCurrentPlayer();
+
+        void WipeConsole();
+
 };
 
 #endif // CHESSGAME_H

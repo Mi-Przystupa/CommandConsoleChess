@@ -44,6 +44,7 @@ public:
     position_t GetPosition();
     void SetPosition(int x, int y);
     bool GetIsAvailable();
+    void SetIsAvailable(bool available);
 
     virtual PieceType GetPieceType() = 0;
     virtual std::vector<position_t> GetValidMoves() = 0;

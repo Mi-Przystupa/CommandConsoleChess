@@ -58,4 +58,5 @@ std::vector<position_t> Knight::GetValidMoves(){
             validMoves.push_back(position_t(m_position.x - 1, m_position.y + 2));
         }
     }
+    return validMoves;
 }

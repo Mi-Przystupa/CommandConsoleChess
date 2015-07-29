@@ -32,53 +32,80 @@ ChessGame::~ChessGame()
     //dtor
 }
 
-void ChessGame::GetConsoleInput(){
+void ChessGame::WipeConsole(){
+    //TODO: This can be way more clever;
+    for (int i = 0; i < 2; i++){
+        std::cout << std::endl;
+    }
+
+}
+
+void ChessGame::Execute(){
+    bool isGameOver = false;
+
+    while (!isGameOver){
+        WipeConsole();
+        std::cout << std::endl;
+        DisplayCurrentPlayer();
+        std::cout << std::endl;
+        DisplayBoard();
+        if(GetConsoleInput()){
+            SwitchPlayer();
+        }
+    }
+}
+//TODO: almost all my error handling is done with conditional booleans, this should be changed to exceptions perhaps??
+bool ChessGame::GetConsoleInput(){
 
     position_t newposition;
     std::string coordinate;
     char pieceName;
 
-    if(m_currentPlayerIsBlack) {
-        std::cout << "It is Black's Turn" << std::endl;
-    } else {
-        std::cout << "It is White's Turn" << std::endl;
-    }
     std::cout << "Select a piece" << std::endl;
     std::cin >> pieceName;
-    DisplayRequestedPieces(pieceName);
-    DisplayBoard();
-    std::cout << "Which piece Do you want to move?" << std::endl;
-    int index;
-    std :: cin >> index;
+    bool validInput = DisplayRequestedPieces(pieceName);
 
-    ChessPiece* selectedPiece = m_ptrCurrentPlayer->GetAvailableRequestedPieces(pieceName)[index];
-    std::cout << "Where do you want to move the piece" << GetPieceCoordinatesString(index, pieceName) << " to? (e.g. 3,4) " << std::endl;
-    std::cin >> coordinate;
+    if (validInput) {
+        std::cout << "Which one do you want to move?" << std::endl;
+        int index;
+        std :: cin >> index;
+        //This will cause a boundary error
 
-    try {
+        ChessPiece* selectedPiece;
+        std::vector<ChessPiece*> availableRequestedPieces(m_ptrCurrentPlayer->GetAvailableRequestedPieces(pieceName));
+        if(availableRequestedPieces.size() > index){
+            selectedPiece = availableRequestedPieces[index];
+            validInput = true;
+            std::cout << "Where do you want to move the piece " << GetPieceCoordinatesString(index, pieceName) << " to? (e.g. 3,4) " << std::endl;
+            std::cin >> coordinate;
 
-        //the format must be "x,y" so is of length 3
-        std::cout << coordinate.size() << std::endl;
-        std::cout << coordinate << std::endl;
-        std::string xcord = coordinate.substr(0,2);
-        std::string ycord = coordinate.substr(2, 4);
+            try {
+                //the format must be "x,y" so is of length 3
+                std::string xcord = coordinate.substr(0,2);
+                std::string ycord = coordinate.substr(2, 4);
+                newposition.x = atoi(xcord.c_str());
+                newposition.y = atoi(ycord.c_str());
+            } catch(std::exception e) {
+                std::cout << "Invalid format, please use following: \"x,y\""<< std::endl;
+            }
 
-        newposition.x = atoi(xcord.c_str());
-        newposition.y = atoi(ycord.c_str());
-    } catch(std::exception e) {
-        std::cout << "You messed up " << std::endl;
+
+            /*
+                Coordinates are backwards,
+                first index corresponds to "y" axis relative to how board is set up
+                probably not a huge deal, but just need to remember that coordinates are flipped for anything
+                so: (x,y) refers to indexs [y][x]
+            */
+
+            validInput = m_ptrChessBoard->MovePiece(selectedPiece->GetPosition().x, selectedPiece->GetPosition().y, newposition.x,newposition.y);
+        } else {
+            std::cout << "Please pick from available pieces" << std::endl;
+            validInput = false;
+        }
+
     }
 
-
-    /*
-        Coordinates are backwards,
-        first index corresponds to "y" axis relative to how board is set up
-        probably not a huge deal, but just need to remember that coordinates are flipped for anything
-        so: (x,y) refers to indexs [y][x]
-    */
-
-    m_ptrChessBoard->MovePiece(selectedPiece->GetPosition().x, selectedPiece->GetPosition().y, newposition.x,newposition.y);
-    DisplayBoard();
+    return validInput;
 }
 
 void ChessGame::SwitchPlayer(){
@@ -88,6 +115,14 @@ void ChessGame::SwitchPlayer(){
     } else {
         m_ptrCurrentPlayer = m_ptrBlackPlayer;
         m_currentPlayerIsBlack = true;
+    }
+}
+
+void ChessGame::DisplayCurrentPlayer(){
+    if (m_currentPlayerIsBlack){
+        std::cout << "Blacks's Turn" << std::endl;
+    } else {
+        std::cout << "White's Turn" << std::endl;
     }
 }
 
@@ -105,19 +140,28 @@ std::string ChessGame::GetPieceCoordinatesString(int index,char pieceName){
 
     return symbol + "(" + x + "," +  y + ")";
 }
-void ChessGame::DisplayRequestedPieces(char piece){
+bool ChessGame::DisplayRequestedPieces(char piece){
+    bool pieceAvailable = true;
     std::vector<ChessPiece*> availablePieces = m_ptrCurrentPlayer->GetAvailableRequestedPieces(piece);
-
     if(availablePieces.size() == 0){
         std::cout << "No such pieces available" << std::endl;
+        pieceAvailable = false;
     }
     int index = 0;
     for (std::vector<ChessPiece*>::iterator it = availablePieces.begin() ; it != availablePieces.end(); ++it){
         std::cout << (*it)->GetSymbol();
         DisplayCoordinates((*it)->GetPosition());
-        std::cout << "[" << index++ << "]" << std::endl;
+        std::cout << "[" << index++ << "]";
+
+        if(index % 2){
+            std::cout << ", ";
+        } else{
+            std::cout << std::endl;
+        }
 
     }
+
+    return pieceAvailable;
 }
 
 
@@ -125,5 +169,5 @@ void ChessGame::DisplayCoordinates(position_t p){
     std::cout << "(" << p.x << "," << p.y << ")";
 }
 void ChessGame::DisplayBoard(){
-    m_ptrChessBoard->displayBoard();
+    m_ptrChessBoard->DisplayBoard();
 }

@@ -46,21 +46,54 @@ ChessPiece*** ChessBoard::IntializeBoard(){
 //TODO: Should be passing in complext data
 bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
     ChessPiece* pieceMoving = m_board[ys][xs];
+    bool pieceMoved = false;
 
     if (IsValidMove(pieceMoving, xnew, ynew)){
-        printf("of coarse it is friend");
+
+        ChessPiece* newSquare = m_board[ynew][xnew];
+        m_board[ynew][xnew]  = m_board[ys][xs];
+        //Piece Moved to new square
+        m_board[ynew][xnew]->SetPosition(xnew,ynew);
+
+        if(newSquare->GetSymbol() != '_'){
+            newSquare->SetIsAvailable(false);
+            m_board[ys][xs] = new EmptyPiece(ys, xs);
+        } else{
+            newSquare->SetPosition(xs, ys);
+            m_board[ys][xs] = newSquare;
+        }
+        pieceMoved = true;
     } else {
-        printf("Why must you do this michael");
+        printf("Error, Invalid Move\n");
     }
-	m_board[ynew][xnew];
-    return false;
+    return pieceMoved;
 }
 
 bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
 
-    std::vector<position_t> validMoves(piece->GetValidMoves());
+    bool ret = false;
 
-    return false;
+    //TODO: This is definitely a helper function
+    std::vector<position_t> validMoves(piece->GetValidMoves());
+    for (std::vector<position_t>::iterator i = validMoves.begin(); i != validMoves.end(); i++ ){
+        if((*i).x == x && (*i).y == y){
+            ret = true;
+            break;
+        }
+    }
+
+    ChessPiece* occupiedSquare = m_board[y][x];
+    if(ret && occupiedSquare->GetSymbol() != '_' ){
+        //TODO: Helper Function: determine if pieces are on different sides URGENT!! DEAL WITH ME
+        //if both pieces are of same type, it is an invalid move
+        ret = !((std::isupper(piece->GetSymbol()) && std::isupper(occupiedSquare->GetSymbol()))
+                 ||
+                (!std::isupper(piece->GetSymbol()) && !std::isupper(occupiedSquare->GetSymbol())));
+
+    }
+
+
+    return ret;
 }
 
 
@@ -68,8 +101,14 @@ ChessPiece*** ChessBoard::GetBoard(){
 	return m_board;
 }
 
-void ChessBoard::displayBoard(){
+void ChessBoard::DisplayBoard(){
+    printf(" ");
+    for (int i = 0; i < boardHeight; i++){
+        printf("%d", i);
+    }
+    printf("\n");
     for (int i = 0; i < boardHeight;i++){
+        printf("%d", i);
         for(int j = 0; j < boardWidth; j++){
             printf("%c", m_board[i][j]->GetSymbol());
         }
