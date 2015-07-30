@@ -74,6 +74,7 @@ bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
     bool ret = false;
 
     //TODO: This is definitely a helper function
+    //is requested piece a move for the Piece
     std::vector<position_t> validMoves(piece->GetValidMoves());
     for (std::vector<position_t>::iterator i = validMoves.begin(); i != validMoves.end(); i++ ){
         if((*i).x == x && (*i).y == y){
@@ -83,15 +84,14 @@ bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
     }
 
     ChessPiece* occupiedSquare = m_board[y][x];
+
     if(ret && occupiedSquare->GetSymbol() != '_' ){
-        //TODO: Helper Function: determine if pieces are on different sides URGENT!! DEAL WITH ME
-        //if both pieces are of same type, it is an invalid move
-        ret = !((std::isupper(piece->GetSymbol()) && std::isupper(occupiedSquare->GetSymbol()))
-                 ||
-                (!std::isupper(piece->GetSymbol()) && !std::isupper(occupiedSquare->GetSymbol())));
+        //If both pieces on same side, move is invalid
+        ret = !AreSameColor(occupiedSquare->GetSymbol(),piece->GetSymbol());
 
     }
 
+    ret = ret && IsPathClear(piece,x,y,validMoves);
 
     return ret;
 }
@@ -119,3 +119,51 @@ void ChessBoard::DisplayBoard(){
 char ChessBoard::getCell(int x, int y){
     return m_board[x][y]->GetSymbol();
 }
+
+bool ChessBoard::AreSameColor(char p1, char p2){
+    bool bothBlack = std::isupper(p1) && std::isupper(p2);
+    bool bothWhite = !std::isupper(p1) && !std::isupper(p2);
+
+    return bothBlack || bothWhite;
+}
+
+//
+bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<position_t> moves){
+    //Knights don't have a limit
+    if (piece->GetSymbol() == 'k' ||piece->GetSymbol() == 'K' ){
+        return true;
+    }
+    //We weren't moving
+    if(piece->GetPosition().x == x && piece->GetPosition().y == y){
+        return false;
+    }
+    bool isPathClear = true;
+
+    int modifier = 1;
+    position_t piecePos(piece->GetPosition());
+    int xmodified = piecePos.x;
+    int ymodified = piecePos.y;
+
+    while(xmodified != x || ymodified != y){
+        xmodified = piecePos.x;
+        ymodified = piecePos.y;
+
+        if (piecePos.x == x && piecePos.y != y){
+            ymodified = piecePos.y + (y - piecePos.y > 0 ? modifier : -1 * modifier);
+        } else if (piecePos.x != x && piecePos.y ==y){
+            xmodified = piecePos.x + (x - piecePos.x > 0 ? modifier : -1 * modifier);
+        } else {
+            xmodified = piecePos.x + (x - piecePos.x > 0 ? modifier : -1 * modifier);
+            ymodified = piecePos.y + (y - piecePos.y > 0 ? modifier : -1 * modifier);
+        }
+
+        if(m_board[ymodified][xmodified]->GetSymbol() !='_'){
+            isPathClear = false;
+        }
+        modifier++;
+    }
+        return isPathClear;
+}
+
+
+

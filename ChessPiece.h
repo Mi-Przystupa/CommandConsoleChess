@@ -17,6 +17,10 @@ struct position_t{
         x = 0;
         y = 0;
 	}
+	position_t(const position_t& p){
+        x = p.x;
+        y = p.y;
+	}
 
 };
 

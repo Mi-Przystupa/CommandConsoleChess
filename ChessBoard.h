@@ -22,6 +22,8 @@ class ChessBoard
     private:
         ChessPiece*** m_board;
         ChessPiece*** IntializeBoard();
+        bool AreSameColor(char p1, char p2);
+        bool IsPathClear(ChessPiece* piece, int x, int y,std::vector<position_t> moves);
 
 };
 

@@ -67,7 +67,7 @@ bool ChessGame::GetConsoleInput(){
 
     if (validInput) {
         std::cout << "Which one do you want to move?" << std::endl;
-        int index;
+        unsigned int index;
         std :: cin >> index;
         //This will cause a boundary error
 
@@ -148,6 +148,9 @@ bool ChessGame::DisplayRequestedPieces(char piece){
         pieceAvailable = false;
     }
     int index = 0;
+    int lastIndex = availablePieces.size() - 1;
+
+    //TODO; The if statement isn't correct, if last element is even will have , at the end-
     for (std::vector<ChessPiece*>::iterator it = availablePieces.begin() ; it != availablePieces.end(); ++it){
         std::cout << (*it)->GetSymbol();
         DisplayCoordinates((*it)->GetPosition());
@@ -160,6 +163,8 @@ bool ChessGame::DisplayRequestedPieces(char piece){
         }
 
     }
+
+    std::cout<<std::endl;
 
     return pieceAvailable;
 }

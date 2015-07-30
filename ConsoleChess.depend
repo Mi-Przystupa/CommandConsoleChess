@@ -217,3 +217,116 @@
 1437799791 source:c:\users\michaels\git\commandconsolechess\src\emptypiece.cpp
 	"..\include\EmptyPiece.h"
 
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\bishop.cpp
+	"Bishop.h"
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\bishop.h
+	"ChessPiece.h"
+
+1438297577 c:\users\gamerdecathlete\git\commandconsolechess\chesspiece.h
+	<string>
+	<vector>
+
+1437523142 source:c:\users\gamerdecathlete\git\commandconsolechess\blackchessplayer.cpp
+	"BlackChessPlayer.h"
+	"Pawn.h"
+	"Rook.h"
+	"King.h"
+	"Queen.h"
+	"Bishop.h"
+	"Knight.h"
+
+1437523142 c:\users\gamerdecathlete\git\commandconsolechess\blackchessplayer.h
+	"ChessPlayer.h"
+	<vector>
+
+1437523142 c:\users\gamerdecathlete\git\commandconsolechess\chessplayer.h
+	"ChessPiece.h"
+	<map>
+	<vector>
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\pawn.h
+	"ChessPiece.h"
+	<string>
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\rook.h
+	"ChessPiece.h"
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\king.h
+	"ChessPiece.h"
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\queen.h
+	"ChessPiece.h"
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\knight.h
+	"ChessPiece.h"
+
+1438298503 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
+	"ChessBoard.h"
+	<cctype>
+	<stdio.h>
+	<vector>
+	"include/EmptyPiece.h"
+
+1438296228 c:\users\gamerdecathlete\git\commandconsolechess\chessboard.h
+	<vector>
+	"ChessPiece.h"
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\include\emptypiece.h
+	"..\ChessPiece.h"
+
+1438295012 source:c:\users\gamerdecathlete\git\commandconsolechess\chessgame.cpp
+	"ChessGame.h"
+	<iostream>
+	<string>
+	<sstream>
+	<stdlib.h>
+
+1438290854 c:\users\gamerdecathlete\git\commandconsolechess\chessgame.h
+	"ChessBoard.h"
+	"ChessPlayer.h"
+	"BlackChessPlayer.h"
+	"WhiteChessPlayer.h"
+
+1437523142 c:\users\gamerdecathlete\git\commandconsolechess\whitechessplayer.h
+	"ChessPlayer.h"
+
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\chesspiece.cpp
+	"ChessPiece.h"
+
+1437523142 source:c:\users\gamerdecathlete\git\commandconsolechess\chessplayer.cpp
+	"ChessPlayer.h"
+
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\king.cpp
+	"King.h"
+
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\knight.cpp
+	"Knight.h"
+
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\main.cpp
+	<iostream>
+	"ChessBoard.h"
+	"ChessGame.h"
+	<stdio.h>
+
+1438291858 source:c:\users\gamerdecathlete\git\commandconsolechess\pawn.cpp
+	"Pawn.h"
+
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\queen.cpp
+	"Queen.h"
+
+1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\rook.cpp
+	"Rook.h"
+
+1437523142 source:c:\users\gamerdecathlete\git\commandconsolechess\whitechessplayer.cpp
+	"WhiteChessPlayer.h"
+	"Pawn.h"
+	"Rook.h"
+	"King.h"
+	"Queen.h"
+	"Bishop.h"
+	"Knight.h"
+
+1438290855 source:c:\users\gamerdecathlete\git\commandconsolechess\src\emptypiece.cpp
+	"..\include\EmptyPiece.h"
+

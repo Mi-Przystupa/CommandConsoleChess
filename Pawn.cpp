@@ -36,7 +36,6 @@ std::vector<position_t> Pawn::GetValidMoves(){
 
     //Hasn't Moved Yet, so Can advance 2 squares
     if(m_position.y == 6){
-
         validMoves.push_back(position_t(m_position.x, m_position.y - 1));
         validMoves.push_back(position_t(m_position.x, m_position.y - 2));
     } else {
@@ -44,11 +43,11 @@ std::vector<position_t> Pawn::GetValidMoves(){
     }
 
     //Move left diagonally
-    if(m_position.x - modifier >= 0 && m_position.y - 1 <= 0 ){
+    if(m_position.x - modifier >= 0 && 0 <= m_position.y - 1 ){
         validMoves.push_back(position_t(m_position.x - 1, m_position.y - 1));
     }
     //Move Right diagonally
-    if(m_position.x + modifier < 8 && m_position.y - 1 <= 0 ){
+    if(m_position.x + modifier < maxDimension && 0 <= m_position.y - 1){
         validMoves.push_back(position_t(m_position.x + 1, m_position.y - 1));
     }
 
