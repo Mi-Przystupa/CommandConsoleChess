@@ -1,6 +1,7 @@
 #include "ChessBoard.h"
 #include <cctype>
 #include <stdio.h>
+#include <iostream>
 #include <vector>
 #include "include/EmptyPiece.h"
 
@@ -127,7 +128,8 @@ bool ChessBoard::AreSameColor(char p1, char p2){
     return bothBlack || bothWhite;
 }
 
-//
+//Requirement: The x,y coordinates have been established to be a valid move for the piece
+//TODO: Add a check so this no longer is the case
 bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<position_t> moves){
     //Knights don't have a limit
     if (piece->GetSymbol() == 'k' ||piece->GetSymbol() == 'K' ){
@@ -162,6 +164,9 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
         }
         modifier++;
     }
+        if(!isPathClear){
+            std::cout << "Pieces are in way" << std::endl;
+        }
         return isPathClear;
 }
 

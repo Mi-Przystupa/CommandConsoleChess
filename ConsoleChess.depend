@@ -261,10 +261,11 @@
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\knight.h
 	"ChessPiece.h"
 
-1438298503 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
+1438375147 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
 	"ChessBoard.h"
 	<cctype>
 	<stdio.h>
+	<iostream>
 	<vector>
 	"include/EmptyPiece.h"
 
