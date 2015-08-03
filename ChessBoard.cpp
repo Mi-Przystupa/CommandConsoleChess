@@ -56,7 +56,7 @@ bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
         //Piece Moved to new square
         m_board[ynew][xnew]->SetPosition(xnew,ynew);
 
-        if(newSquare->GetSymbol() != '_'){
+        if(newSquare->GetSymbol() != '_' ){
             newSquare->SetIsAvailable(false);
             m_board[ys][xs] = new EmptyPiece(ys, xs);
         } else{
@@ -84,6 +84,10 @@ bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
         }
     }
 
+    if (!ret){
+        std::cout << "Invalid Move" << std::endl;
+        return ret;
+    }
     ChessPiece* occupiedSquare = m_board[y][x];
 
     if(ret && occupiedSquare->GetSymbol() != '_' ){
@@ -92,7 +96,11 @@ bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
 
     }
 
-    ret = ret && IsPathClear(piece,x,y,validMoves);
+    if(!ret){
+        std::cout << "Cannot capture own pieces" << std::endl;
+    }
+
+    ret = ret && IsPathClear(piece,x,y,validMoves) && CaptureAllowable(piece,x, y);
 
     return ret;
 }
@@ -139,9 +147,14 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
     if(piece->GetPosition().x == x && piece->GetPosition().y == y){
         return false;
     }
-    bool isPathClear = true;
+    //If the differenct
+    if (IsAdjacentSquare(piece->GetPosition(), position_t(x,y))){
+        return true;
+    }
 
-    int modifier = 1;
+    //At this point we've established move is at least 2 squares away in some direction
+    bool isPathClear = true;
+    int modifier = 2;
     position_t piecePos(piece->GetPosition());
     int xmodified = piecePos.x;
     int ymodified = piecePos.y;
@@ -169,6 +182,22 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
         }
         return isPathClear;
 }
+//Required Is already established x,y is one of the valid moves && not on same side
+bool ChessBoard::CaptureAllowable(ChessPiece* piece,int x,int y){
+    if (std::toupper(piece->GetSymbol()) != 'P' || m_board[y][x]->GetSymbol() == '_' )
+        return true;
+    //Is a diagonal move so is valid for pawn
+    if (piece->GetPosition().x - x != 0 ){
+        return true;
+    }
+    //Else is an invalid capture
+    std::cout << "Pawns can only capture diagonally" << std::endl;
+    return false;
+}
 
+bool ChessBoard::IsAdjacentSquare(position_t p1, position_t p2){
+    bool adjacentX = p2.x - p1.x <=1 || p2.x - p1.x >= -1;
+    bool adjacentY = p2.y - p1.y <=1 || p2.y - p1.y >= -1;
+    return adjacentX && adjacentY;
 
-
+}

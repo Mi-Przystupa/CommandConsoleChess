@@ -101,13 +101,13 @@
 	"Bishop.h"
 	"Knight.h"
 
-1437616047 source:c:\users\michaels\git\commandconsolechess\bishop.cpp
+1438559717 source:c:\users\michaels\git\commandconsolechess\bishop.cpp
 	"Bishop.h"
 
 1437614807 c:\users\michaels\git\commandconsolechess\bishop.h
 	"ChessPiece.h"
 
-1438119180 c:\users\michaels\git\commandconsolechess\chesspiece.h
+1438555257 c:\users\michaels\git\commandconsolechess\chesspiece.h
 	<string>
 	<vector>
 
@@ -145,18 +145,19 @@
 1437691347 c:\users\michaels\git\commandconsolechess\knight.h
 	"ChessPiece.h"
 
-1438143381 source:c:\users\michaels\git\commandconsolechess\chessboard.cpp
+1438559806 source:c:\users\michaels\git\commandconsolechess\chessboard.cpp
 	"ChessBoard.h"
 	<cctype>
 	<stdio.h>
+	<iostream>
 	<vector>
 	"include/EmptyPiece.h"
 
-1438141483 c:\users\michaels\git\commandconsolechess\chessboard.h
+1438558658 c:\users\michaels\git\commandconsolechess\chessboard.h
 	<vector>
 	"ChessPiece.h"
 
-1438143066 source:c:\users\michaels\git\commandconsolechess\chessgame.cpp
+1438555257 source:c:\users\michaels\git\commandconsolechess\chessgame.cpp
 	"ChessGame.h"
 	<iostream>
 	<string>
@@ -190,7 +191,7 @@
 	"ChessGame.h"
 	<stdio.h>
 
-1437799943 source:c:\users\michaels\git\commandconsolechess\pawn.cpp
+1438555257 source:c:\users\michaels\git\commandconsolechess\pawn.cpp
 	"Pawn.h"
 
 1437799156 source:c:\users\michaels\git\commandconsolechess\queen.cpp

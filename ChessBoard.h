@@ -24,7 +24,8 @@ class ChessBoard
         ChessPiece*** IntializeBoard();
         bool AreSameColor(char p1, char p2);
         bool IsPathClear(ChessPiece* piece, int x, int y,std::vector<position_t> moves);
-
+        bool CaptureAllowable(ChessPiece* piece,int x,int y);
+        bool IsAdjacentSquare(position_t p1, position_t p2);
 };
 
 #endif // CHESSBOARD_H
