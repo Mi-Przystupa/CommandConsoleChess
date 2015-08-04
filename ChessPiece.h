@@ -22,6 +22,10 @@ struct position_t{
         y = p.y;
 	}
 
+	bool operator==(const position_t& p) const {
+        return x == p.x && y == p.y;
+	}
+
 };
 
 enum PieceType {

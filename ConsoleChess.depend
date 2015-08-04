@@ -107,7 +107,7 @@
 1437614807 c:\users\michaels\git\commandconsolechess\bishop.h
 	"ChessPiece.h"
 
-1438555257 c:\users\michaels\git\commandconsolechess\chesspiece.h
+1438695574 c:\users\michaels\git\commandconsolechess\chesspiece.h
 	<string>
 	<vector>
 
@@ -185,13 +185,14 @@
 1438142121 source:c:\users\michaels\git\commandconsolechess\knight.cpp
 	"Knight.h"
 
-1438139388 source:c:\users\michaels\git\commandconsolechess\main.cpp
+1438693630 source:c:\users\michaels\git\commandconsolechess\main.cpp
 	<iostream>
 	"ChessBoard.h"
 	"ChessGame.h"
 	<stdio.h>
+	"UnitTest++.h"
 
-1438555257 source:c:\users\michaels\git\commandconsolechess\pawn.cpp
+1438694030 source:c:\users\michaels\git\commandconsolechess\pawn.cpp
 	"Pawn.h"
 
 1437799156 source:c:\users\michaels\git\commandconsolechess\queen.cpp
@@ -331,4 +332,125 @@
 
 1438290855 source:c:\users\gamerdecathlete\git\commandconsolechess\src\emptypiece.cpp
 	"..\include\EmptyPiece.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\unittest++.h
+	"UnitTestPP.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\unittestpp.h
+	"Config.h"
+	"TestMacros.h"
+	"CheckMacros.h"
+	"TestRunner.h"
+	"TimeConstraint.h"
+	"ReportAssert.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\config.h
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\testmacros.h
+	"Config.h"
+	"TestSuite.h"
+	"ExceptionMacros.h"
+	"ExecuteTest.h"
+	"AssertException.h"
+	"TestDetails.h"
+	"MemoryOutStream.h"
+	"Posix/SignalTranslator.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\testsuite.h
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\exceptionmacros.h
+	"Config.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\executetest.h
+	"Config.h"
+	"ExceptionMacros.h"
+	"TestDetails.h"
+	"TestResults.h"
+	"MemoryOutStream.h"
+	"AssertException.h"
+	"CurrentTest.h"
+	"ReportAssertImpl.h"
+	"Posix/SignalTranslator.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\testdetails.h
+	"HelperMacros.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\helpermacros.h
+	"Config.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\testresults.h
+	"HelperMacros.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\memoryoutstream.h
+	"Config.h"
+	"HelperMacros.h"
+	<sstream>
+	<cstddef>
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\assertexception.h
+	"Config.h"
+	"HelperMacros.h"
+	<exception>
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\currenttest.h
+	"HelperMacros.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\reportassertimpl.h
+	"Config.h"
+	"HelperMacros.h"
+	<csetjmp>
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\posix\signaltranslator.h
+	<setjmp.h>
+	<signal.h>
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\checkmacros.h
+	"HelperMacros.h"
+	"ExceptionMacros.h"
+	"Checks.h"
+	"AssertException.h"
+	"MemoryOutStream.h"
+	"TestDetails.h"
+	"CurrentTest.h"
+	"ReportAssertImpl.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\checks.h
+	"Config.h"
+	"TestResults.h"
+	"MemoryOutStream.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\testrunner.h
+	"Test.h"
+	"TestList.h"
+	"CurrentTest.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\test.h
+	"TestDetails.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\testlist.h
+	"HelperMacros.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\timeconstraint.h
+	"TimeHelpers.h"
+	"HelperMacros.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\timehelpers.h
+	"Config.h"
+	"Posix/TimeHelpers.h"
+	"Win32/TimeHelpers.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\posix\timehelpers.h
+	<sys/time.h>
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\win32\timehelpers.h
+	"../Config.h"
+	"../HelperMacros.h"
+
+1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\reportassert.h
+	"HelperMacros.h"
+
+1438693405 source:c:\users\michaels\git\commandconsolechess\src\pawntestsuite.cpp
+	"PawnTestSuite.h"
+
+1438693405 c:\users\michaels\git\commandconsolechess\include\pawntestsuite.h
 

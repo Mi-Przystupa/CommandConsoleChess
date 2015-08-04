@@ -63,7 +63,6 @@ std::vector<position_t> Pawn::GetValidMoves(){
 
     //Hasn't Moved Yet, so Can advance 2 squares
     if(m_position.y == 1){
-
         validMoves.push_back(position_t(m_position.x, m_position.y + 1));
         validMoves.push_back(position_t(m_position.x, m_position.y + 2));
     } else {
