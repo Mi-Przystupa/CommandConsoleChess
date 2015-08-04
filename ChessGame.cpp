@@ -148,7 +148,6 @@ bool ChessGame::DisplayRequestedPieces(char piece){
         pieceAvailable = false;
     }
     int index = 0;
-    int lastIndex = availablePieces.size() - 1;
 
     //TODO; The if statement isn't correct, if last element is even will have , at the end-
     for (std::vector<ChessPiece*>::iterator it = availablePieces.begin() ; it != availablePieces.end(); ++it){

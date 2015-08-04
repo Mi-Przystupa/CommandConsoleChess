@@ -98,6 +98,7 @@ bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
 
     if(!ret){
         std::cout << "Cannot capture own pieces" << std::endl;
+        return ret;
     }
 
     ret = ret && IsPathClear(piece,x,y,validMoves) && CaptureAllowable(piece,x, y);
@@ -147,14 +148,14 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
     if(piece->GetPosition().x == x && piece->GetPosition().y == y){
         return false;
     }
-    //If the differenct
+    //If the difference is just 1 square, is fine
     if (IsAdjacentSquare(piece->GetPosition(), position_t(x,y))){
         return true;
     }
 
     //At this point we've established move is at least 2 squares away in some direction
     bool isPathClear = true;
-    int modifier = 2;
+    int modifier = 1;
     position_t piecePos(piece->GetPosition());
     int xmodified = piecePos.x;
     int ymodified = piecePos.y;
@@ -184,20 +185,28 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
 }
 //Required Is already established x,y is one of the valid moves && not on same side
 bool ChessBoard::CaptureAllowable(ChessPiece* piece,int x,int y){
-    if (std::toupper(piece->GetSymbol()) != 'P' || m_board[y][x]->GetSymbol() == '_' )
+    /*
+    If piece is pawn && move is diagnollay, then valid only if square is not
+    */
+    //Return true, because no special rules needed
+    if (std::toupper(piece->GetSymbol()) != 'P')
         return true;
+
+
     //Is a diagonal move so is valid for pawn
-    if (piece->GetPosition().x - x != 0 ){
+    if (piece->GetPosition().x - x != 0 && m_board[y][x]->GetSymbol() != '_' ){
         return true;
+    } else if (piece->GetPosition().x - x == 0 && m_board[y][x]->GetSymbol() == '_'){
+        return true; //Mean's pawn is moving forward
     }
     //Else is an invalid capture
-    std::cout << "Pawns can only capture diagonally" << std::endl;
+    std::cout << "Invalid Capture" << std::endl;
     return false;
 }
 
 bool ChessBoard::IsAdjacentSquare(position_t p1, position_t p2){
-    bool adjacentX = p2.x - p1.x <=1 || p2.x - p1.x >= -1;
-    bool adjacentY = p2.y - p1.y <=1 || p2.y - p1.y >= -1;
+    bool adjacentX = p2.x - p1.x <=1 && p2.x - p1.x >= -1;
+    bool adjacentY = p2.y - p1.y <=1 && p2.y - p1.y >= -1;
     return adjacentX && adjacentY;
 
 }
