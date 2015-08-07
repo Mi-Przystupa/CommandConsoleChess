@@ -219,13 +219,13 @@
 1437799791 source:c:\users\michaels\git\commandconsolechess\src\emptypiece.cpp
 	"..\include\EmptyPiece.h"
 
-1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\bishop.cpp
+1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\bishop.cpp
 	"Bishop.h"
 
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\bishop.h
 	"ChessPiece.h"
 
-1438297577 c:\users\gamerdecathlete\git\commandconsolechess\chesspiece.h
+1438806163 c:\users\gamerdecathlete\git\commandconsolechess\chesspiece.h
 	<string>
 	<vector>
 
@@ -263,7 +263,7 @@
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\knight.h
 	"ChessPiece.h"
 
-1438375147 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
+1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
 	"ChessBoard.h"
 	<cctype>
 	<stdio.h>
@@ -271,14 +271,14 @@
 	<vector>
 	"include/EmptyPiece.h"
 
-1438296228 c:\users\gamerdecathlete\git\commandconsolechess\chessboard.h
+1438806163 c:\users\gamerdecathlete\git\commandconsolechess\chessboard.h
 	<vector>
 	"ChessPiece.h"
 
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\include\emptypiece.h
 	"..\ChessPiece.h"
 
-1438295012 source:c:\users\gamerdecathlete\git\commandconsolechess\chessgame.cpp
+1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\chessgame.cpp
 	"ChessGame.h"
 	<iostream>
 	<string>
@@ -306,13 +306,14 @@
 1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\knight.cpp
 	"Knight.h"
 
-1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\main.cpp
+1438910247 source:c:\users\gamerdecathlete\git\commandconsolechess\main.cpp
 	<iostream>
 	"ChessBoard.h"
 	"ChessGame.h"
 	<stdio.h>
+	"UnitTest++.h"
 
-1438291858 source:c:\users\gamerdecathlete\git\commandconsolechess\pawn.cpp
+1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\pawn.cpp
 	"Pawn.h"
 
 1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\queen.cpp
@@ -453,4 +454,138 @@
 	"PawnTestSuite.h"
 
 1438693405 c:\users\michaels\git\commandconsolechess\include\pawntestsuite.h
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\unittest++.h
+	"UnitTestPP.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\unittestpp.h
+	"Config.h"
+	"TestMacros.h"
+	"CheckMacros.h"
+	"TestRunner.h"
+	"TimeConstraint.h"
+	"ReportAssert.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\config.h
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\testmacros.h
+	"Config.h"
+	"TestSuite.h"
+	"ExceptionMacros.h"
+	"ExecuteTest.h"
+	"AssertException.h"
+	"TestDetails.h"
+	"MemoryOutStream.h"
+	"Posix/SignalTranslator.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\testsuite.h
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\exceptionmacros.h
+	"Config.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\executetest.h
+	"Config.h"
+	"ExceptionMacros.h"
+	"TestDetails.h"
+	"TestResults.h"
+	"MemoryOutStream.h"
+	"AssertException.h"
+	"CurrentTest.h"
+	"ReportAssertImpl.h"
+	"Posix/SignalTranslator.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\testdetails.h
+	"HelperMacros.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\helpermacros.h
+	"Config.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\testresults.h
+	"HelperMacros.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\memoryoutstream.h
+	"Config.h"
+	"HelperMacros.h"
+	<sstream>
+	<cstddef>
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\assertexception.h
+	"Config.h"
+	"HelperMacros.h"
+	<exception>
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\currenttest.h
+	"HelperMacros.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\reportassertimpl.h
+	"Config.h"
+	"HelperMacros.h"
+	<csetjmp>
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\posix\signaltranslator.h
+	<setjmp.h>
+	<signal.h>
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\checkmacros.h
+	"HelperMacros.h"
+	"ExceptionMacros.h"
+	"Checks.h"
+	"AssertException.h"
+	"MemoryOutStream.h"
+	"TestDetails.h"
+	"CurrentTest.h"
+	"ReportAssertImpl.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\checks.h
+	"Config.h"
+	"TestResults.h"
+	"MemoryOutStream.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\testrunner.h
+	"Test.h"
+	"TestList.h"
+	"CurrentTest.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\test.h
+	"TestDetails.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\testlist.h
+	"HelperMacros.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\timeconstraint.h
+	"TimeHelpers.h"
+	"HelperMacros.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\timehelpers.h
+	"Config.h"
+	"Posix/TimeHelpers.h"
+	"Win32/TimeHelpers.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\posix\timehelpers.h
+	<sys/time.h>
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\win32\timehelpers.h
+	"../Config.h"
+	"../HelperMacros.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\reportassert.h
+	"HelperMacros.h"
+
+1438806164 source:c:\users\gamerdecathlete\git\commandconsolechess\src\pawntestsuite.cpp
+	"PawnTestSuite.h"
+	"../Pawn.h"
+	"UnitTest++.h"
+	<vector>
+	"../ChessPiece.h"
+
+1438806164 c:\users\gamerdecathlete\git\commandconsolechess\include\pawntestsuite.h
+
+1438912354 source:c:\users\gamerdecathlete\git\commandconsolechess\rooktestsuite.cpp
+	"RookTestSuite.h"
+	"../Rook.h"
+	"UnitTest++.h"
+	<vector>
+	"../ChessPiece.h"
+
+1438893427 c:\users\gamerdecathlete\git\commandconsolechess\rooktestsuite.h
 

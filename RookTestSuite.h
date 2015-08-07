@@ -1,0 +1,5 @@
+#ifndef ROOKTESTSUITE_H
+#define ROOKTESTSUITE_H
+
+
+#endif // ROOKTESTSUITE_H
