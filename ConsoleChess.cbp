@@ -62,9 +62,13 @@
 		<Unit filename="Rook.h" />
 		<Unit filename="WhiteChessPlayer.cpp" />
 		<Unit filename="WhiteChessPlayer.h" />
+		<Unit filename="include/ChessException.h" />
+		<Unit filename="include/ChessExceptionTests.h" />
 		<Unit filename="include/EmptyPiece.h" />
 		<Unit filename="include/PawnTestSuite.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ChessException.cpp" />
+		<Unit filename="src/ChessExceptionTests.cpp" />
 		<Unit filename="src/EmptyPiece.cpp" />
 		<Unit filename="src/PawnTestSuite.cpp" />
 		<Extensions>

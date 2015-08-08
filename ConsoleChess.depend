@@ -450,10 +450,14 @@
 1436925516 c:\users\michaels\git\commandconsolechess\unittest-cpp\unittest++\reportassert.h
 	"HelperMacros.h"
 
-1438693405 source:c:\users\michaels\git\commandconsolechess\src\pawntestsuite.cpp
+1438696733 source:c:\users\michaels\git\commandconsolechess\src\pawntestsuite.cpp
 	"PawnTestSuite.h"
+	"../Pawn.h"
+	"UnitTest++.h"
+	<vector>
+	"../ChessPiece.h"
 
-1438693405 c:\users\michaels\git\commandconsolechess\include\pawntestsuite.h
+1438693451 c:\users\michaels\git\commandconsolechess\include\pawntestsuite.h
 
 1438806164 c:\users\gamerdecathlete\git\commandconsolechess\unittest-cpp\unittest++\unittest++.h
 	"UnitTestPP.h"
@@ -588,4 +592,11 @@
 	"../ChessPiece.h"
 
 1438893427 c:\users\gamerdecathlete\git\commandconsolechess\rooktestsuite.h
+
+1439069515 source:c:\users\michaels\git\commandconsolechess\src\chessexception.cpp
+	"ChessException.h"
+
+1439069506 c:\users\michaels\git\commandconsolechess\include\chessexception.h
+	<stdexcept>
+	<string>
 
