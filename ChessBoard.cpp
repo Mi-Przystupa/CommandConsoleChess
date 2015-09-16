@@ -4,6 +4,10 @@
 #include <iostream>
 #include <vector>
 #include "include/EmptyPiece.h"
+#include "PieceException.h"
+#include "MoveException.h"
+#include "PathException.h"
+#include "CaptureException.h"
 
 ChessBoard::ChessBoard()
 {
@@ -45,7 +49,7 @@ ChessPiece*** ChessBoard::IntializeBoard(){
 	return board;
 }
 //TODO: Should be passing in complext data
-bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
+bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew) {
     ChessPiece* pieceMoving = m_board[ys][xs];
     bool pieceMoved = false;
 
@@ -64,44 +68,32 @@ bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew){
             m_board[ys][xs] = newSquare;
         }
         pieceMoved = true;
-    } else {
-        printf("Error, Invalid Move\n");
     }
     return pieceMoved;
 }
 
 bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
-
-    bool ret = false;
-
-    //TODO: This is definitely a helper function
-    //is requested piece a move for the Piece
-    std::vector<position_t> validMoves(piece->GetValidMoves());
-    for (std::vector<position_t>::iterator i = validMoves.begin(); i != validMoves.end(); i++ ){
-        if((*i).x == x && (*i).y == y){
-            ret = true;
-            break;
+    bool ret = true;
+    try {
+        if (!IsMoveAvailable(piece, position_t(x,y))){
+            throw MoveException();
         }
-    }
-
-    if (!ret){
-        std::cout << "Invalid Move" << std::endl;
-        return ret;
-    }
-    ChessPiece* occupiedSquare = m_board[y][x];
-
-    if(ret && occupiedSquare->GetSymbol() != '_' ){
         //If both pieces on same side, move is invalid
-        ret = !AreSameColor(occupiedSquare->GetSymbol(),piece->GetSymbol());
+        if(AreSameColor(m_board[y][x]->GetSymbol(),piece->GetSymbol())){
+            throw PieceException();
+        }
 
+        if (!IsPathClear(piece,x,y)) {
+            throw PathException();
+        }
+
+        if(!CaptureAllowable(piece,x, y)){
+            throw CaptureException();
+        }
+    } catch (ChessException e) {
+        std::cout << e.what() << std::endl;
+        ret = false;
     }
-
-    if(!ret){
-        std::cout << "Cannot capture own pieces" << std::endl;
-        return ret;
-    }
-
-    ret = ret && IsPathClear(piece,x,y,validMoves) && CaptureAllowable(piece,x, y);
 
     return ret;
 }
@@ -131,6 +123,9 @@ char ChessBoard::getCell(int x, int y){
 }
 
 bool ChessBoard::AreSameColor(char p1, char p2){
+    if (p1 == '_' || p2 == '_'){
+        return false; // one of the squares is empty
+    }
     bool bothBlack = std::isupper(p1) && std::isupper(p2);
     bool bothWhite = !std::isupper(p1) && !std::isupper(p2);
 
@@ -139,7 +134,7 @@ bool ChessBoard::AreSameColor(char p1, char p2){
 
 //Requirement: The x,y coordinates have been established to be a valid move for the piece
 //TODO: Add a check so this no longer is the case
-bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<position_t> moves){
+bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y){
     //Knights don't have a limit
     if (piece->GetSymbol() == 'k' ||piece->GetSymbol() == 'K' ){
         return true;
@@ -152,7 +147,6 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
     if (IsAdjacentSquare(piece->GetPosition(), position_t(x,y))){
         return true;
     }
-
     //At this point we've established move is at least 2 squares away in some direction
     bool isPathClear = true;
     int modifier = 1;
@@ -178,10 +172,7 @@ bool ChessBoard::IsPathClear(ChessPiece* piece, int x, int y, std::vector<positi
         }
         modifier++;
     }
-        if(!isPathClear){
-            std::cout << "Pieces are in way" << std::endl;
-        }
-        return isPathClear;
+    return isPathClear;
 }
 //Required Is already established x,y is one of the valid moves && not on same side
 bool ChessBoard::CaptureAllowable(ChessPiece* piece,int x,int y){
@@ -200,7 +191,6 @@ bool ChessBoard::CaptureAllowable(ChessPiece* piece,int x,int y){
         return true; //Mean's pawn is moving forward
     }
     //Else is an invalid capture
-    std::cout << "Invalid Capture" << std::endl;
     return false;
 }
 
@@ -208,5 +198,17 @@ bool ChessBoard::IsAdjacentSquare(position_t p1, position_t p2){
     bool adjacentX = p2.x - p1.x <=1 && p2.x - p1.x >= -1;
     bool adjacentY = p2.y - p1.y <=1 && p2.y - p1.y >= -1;
     return adjacentX && adjacentY;
+}
 
+bool ChessBoard::IsMoveAvailable(ChessPiece* piece, position_t newpos){
+    bool ret = false;
+    std::vector<position_t> validMoves(piece->GetValidMoves());
+    for (std::vector<position_t>::iterator i = validMoves.begin(); i != validMoves.end(); i++ ){
+        if((*i) == newpos){
+            ret = true;
+            break;
+        }
+    }
+
+    return ret;
 }

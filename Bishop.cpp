@@ -1,5 +1,6 @@
 #include "Bishop.h"
 
+
 Bishop::Bishop(int x, int y, std::string side)
 {
     //ctor

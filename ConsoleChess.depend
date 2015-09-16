@@ -219,7 +219,7 @@
 1437799791 source:c:\users\michaels\git\commandconsolechess\src\emptypiece.cpp
 	"..\include\EmptyPiece.h"
 
-1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\bishop.cpp
+1441156550 source:c:\users\gamerdecathlete\git\commandconsolechess\bishop.cpp
 	"Bishop.h"
 
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\bishop.h
@@ -263,29 +263,35 @@
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\knight.h
 	"ChessPiece.h"
 
-1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
+1442373825 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboard.cpp
 	"ChessBoard.h"
 	<cctype>
 	<stdio.h>
 	<iostream>
 	<vector>
 	"include/EmptyPiece.h"
+	"PieceException.h"
+	"MoveException.h"
+	"PathException.h"
+	"CaptureException.h"
 
-1438806163 c:\users\gamerdecathlete\git\commandconsolechess\chessboard.h
+1442206524 c:\users\gamerdecathlete\git\commandconsolechess\chessboard.h
 	<vector>
 	"ChessPiece.h"
 
 1438290854 c:\users\gamerdecathlete\git\commandconsolechess\include\emptypiece.h
 	"..\ChessPiece.h"
 
-1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\chessgame.cpp
+1442375775 source:c:\users\gamerdecathlete\git\commandconsolechess\chessgame.cpp
 	"ChessGame.h"
 	<iostream>
 	<string>
 	<sstream>
 	<stdlib.h>
+	"PieceException.h"
+	"MoveException.h"
 
-1438290854 c:\users\gamerdecathlete\git\commandconsolechess\chessgame.h
+1440348058 c:\users\gamerdecathlete\git\commandconsolechess\chessgame.h
 	"ChessBoard.h"
 	"ChessPlayer.h"
 	"BlackChessPlayer.h"
@@ -316,7 +322,7 @@
 1438806163 source:c:\users\gamerdecathlete\git\commandconsolechess\pawn.cpp
 	"Pawn.h"
 
-1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\queen.cpp
+1442375631 source:c:\users\gamerdecathlete\git\commandconsolechess\queen.cpp
 	"Queen.h"
 
 1438290854 source:c:\users\gamerdecathlete\git\commandconsolechess\rook.cpp
@@ -599,4 +605,58 @@
 1439069506 c:\users\michaels\git\commandconsolechess\include\chessexception.h
 	<stdexcept>
 	<string>
+
+1440344169 source:c:\users\gamerdecathlete\git\commandconsolechess\src\chessexception.cpp
+	"ChessException.h"
+
+1440345926 c:\users\gamerdecathlete\git\commandconsolechess\include\chessexception.h
+	<stdexcept>
+	<string>
+
+1440345057 source:c:\users\gamerdecathlete\git\commandconsolechess\moveexception.cpp
+	"MoveException.h"
+
+1440345490 c:\users\gamerdecathlete\git\commandconsolechess\moveexception.h
+	"include/ChessException.h"
+	<string>
+
+1440346953 source:c:\users\gamerdecathlete\git\commandconsolechess\src\chessexceptiontests.cpp
+	"ChessExceptionTests.h"
+	"ChessException.h"
+	"../MoveException.h"
+	"../PieceException.h"
+	"UnitTest++.h"
+
+1440206616 c:\users\gamerdecathlete\git\commandconsolechess\include\chessexceptiontests.h
+
+1440346939 source:c:\users\gamerdecathlete\git\commandconsolechess\pieceexception.cpp
+	"PieceException.h"
+
+1440346600 c:\users\gamerdecathlete\git\commandconsolechess\pieceexception.h
+	"include/ChessException.h"
+	<string>
+
+1442374430 source:c:\users\gamerdecathlete\git\commandconsolechess\chessboardtestsuite.cpp
+	"ChessBoardTestSuite.h"
+	"ChessGame.h"
+	"ChessBoard.h"
+	"UnitTest++.h"
+	"include/EmptyPiece.h"
+	"Queen.h"
+
+1440347462 c:\users\gamerdecathlete\git\commandconsolechess\chessboardtestsuite.h
+
+1441156320 source:c:\users\gamerdecathlete\git\commandconsolechess\captureexception.cpp
+	"CaptureException.h"
+
+1441156432 c:\users\gamerdecathlete\git\commandconsolechess\captureexception.h
+	"include/ChessException.h"
+	<string>
+
+1441156972 c:\users\gamerdecathlete\git\commandconsolechess\pathexception.h
+	"include/ChessException.h"
+	<string>
+
+1441156801 source:c:\users\gamerdecathlete\git\commandconsolechess\pathexception.cpp
+	"PathException.h"
 

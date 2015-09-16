@@ -3,7 +3,8 @@
 #include <string>
 #include <sstream>
 #include <stdlib.h>
-
+#include "PieceException.h"
+#include "MoveException.h"
 
 
 ChessGame::ChessGame()
@@ -61,8 +62,10 @@ bool ChessGame::GetConsoleInput(){
     std::string coordinate;
     char pieceName;
 
-    std::cout << "Select a piece" << std::endl;
+    std::cout << "Select a piece or pass with g" << std::endl;
     std::cin >> pieceName;
+    if(pieceName == 'g')
+        return true;
     bool validInput = DisplayRequestedPieces(pieceName);
 
     if (validInput) {
@@ -88,17 +91,14 @@ bool ChessGame::GetConsoleInput(){
             } catch(std::exception e) {
                 std::cout << "Invalid format, please use following: \"x,y\""<< std::endl;
             }
-
-
             /*
                 Coordinates are backwards,
                 first index corresponds to "y" axis relative to how board is set up
                 probably not a huge deal, but just need to remember that coordinates are flipped for anything
                 so: (x,y) refers to indexs [y][x]
             */
-
             validInput = m_ptrChessBoard->MovePiece(selectedPiece->GetPosition().x, selectedPiece->GetPosition().y, newposition.x,newposition.y);
-        } else {
+            } else {
             std::cout << "Please pick from available pieces" << std::endl;
             validInput = false;
         }
@@ -174,4 +174,9 @@ void ChessGame::DisplayCoordinates(position_t p){
 }
 void ChessGame::DisplayBoard(){
     m_ptrChessBoard->DisplayBoard();
+}
+
+
+ChessBoard* ChessGame::GetChessBoard(){
+    return m_ptrChessBoard;
 }

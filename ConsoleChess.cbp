@@ -42,8 +42,12 @@
 		<Unit filename="Bishop.h" />
 		<Unit filename="BlackChessPlayer.cpp" />
 		<Unit filename="BlackChessPlayer.h" />
+		<Unit filename="CaptureException.cpp" />
+		<Unit filename="CaptureException.h" />
 		<Unit filename="ChessBoard.cpp" />
 		<Unit filename="ChessBoard.h" />
+		<Unit filename="ChessBoardTestSuite.cpp" />
+		<Unit filename="ChessBoardTestSuite.h" />
 		<Unit filename="ChessGame.cpp" />
 		<Unit filename="ChessGame.h" />
 		<Unit filename="ChessPiece.cpp" />
@@ -54,8 +58,14 @@
 		<Unit filename="King.h" />
 		<Unit filename="Knight.cpp" />
 		<Unit filename="Knight.h" />
+		<Unit filename="MoveException.cpp" />
+		<Unit filename="MoveException.h" />
+		<Unit filename="PathException.cpp" />
+		<Unit filename="PathException.h" />
 		<Unit filename="Pawn.cpp" />
 		<Unit filename="Pawn.h" />
+		<Unit filename="PieceException.cpp" />
+		<Unit filename="PieceException.h" />
 		<Unit filename="Queen.cpp" />
 		<Unit filename="Queen.h" />
 		<Unit filename="Rook.cpp" />

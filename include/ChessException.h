@@ -9,9 +9,7 @@ class ChessException : public std::runtime_error
 {
     public:
         ChessException(std::string message);
-        virtual ~ChessException();
-    protected:
-    private:
+//        virtual ~ChessException();
 };
 
 #endif // CHESSEXCEPTION_H

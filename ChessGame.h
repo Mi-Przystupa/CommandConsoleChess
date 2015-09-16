@@ -14,6 +14,8 @@ class ChessGame
         virtual ~ChessGame();
 
         void Execute();
+        ChessBoard* GetChessBoard();
+
     private:
         BlackChessPlayer* m_ptrBlackPlayer;
         WhiteChessPlayer* m_ptrWhitePlayer;
