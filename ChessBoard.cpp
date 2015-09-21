@@ -53,7 +53,7 @@ bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew) {
     ChessPiece* pieceMoving = m_board[ys][xs];
     bool pieceMoved = false;
 
-    if (IsValidMove(pieceMoving, xnew, ynew)){
+    if (IsValidAction(pieceMoving, xnew, ynew)){
 
         ChessPiece* newSquare = m_board[ynew][xnew];
         m_board[ynew][xnew]  = m_board[ys][xs];
@@ -72,7 +72,7 @@ bool ChessBoard::MovePiece(int xs, int ys, int xnew, int ynew) {
     return pieceMoved;
 }
 
-bool ChessBoard::IsValidMove(ChessPiece* piece, int x, int y){
+bool ChessBoard::IsValidAction(ChessPiece* piece, int x, int y){
     bool ret = true;
     try {
         if (!IsMoveAvailable(piece, position_t(x,y))){

@@ -54,19 +54,19 @@ std::vector<position_t> Queen::DiagonalMoves(){
     modifier = 1;
     //Go up and left on board
     while ((m_position.x - modifier) >= 0 && (m_position.y + modifier) <maxDimension){
-        validMoves.push_back(position_t(m_position.x + modifier, m_position.y + modifier));
+        validMoves.push_back(position_t(m_position.x - modifier, m_position.y + modifier));
         modifier++;
     }
     modifier = 1;
     //Go down and right on board
     while ((m_position.x + modifier) < maxDimension && (m_position.y - modifier) > maxDimension){
-        validMoves.push_back(position_t(m_position.x + modifier, m_position.y + modifier));
+        validMoves.push_back(position_t(m_position.x + modifier, m_position.y - modifier));
         modifier++;
     }
     modifier = 1;
     //Go down and left on board
     while ((m_position.x - modifier) > maxDimension && (m_position.y - modifier) > maxDimension){
-        validMoves.push_back(position_t(m_position.x + modifier, m_position.y + modifier));
+        validMoves.push_back(position_t(m_position.x - modifier, m_position.y - modifier));
         modifier++;
     }
 

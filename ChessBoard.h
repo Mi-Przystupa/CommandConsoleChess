@@ -18,9 +18,12 @@ class ChessBoard
         ChessPiece*** GetBoard();
         char getCell(int x, int y);
 
-        bool IsValidMove(ChessPiece* piece, int x, int y);
+        //Requirements: None
+        bool IsValidAction(ChessPiece* piece, int x, int y);
         bool AreSameColor(char p1, char p2);
+        //Requirements: IsValidMove() called before
         bool IsPathClear(ChessPiece* piece, int x, int y);
+
         bool CaptureAllowable(ChessPiece* piece,int x,int y);
         bool IsMoveAvailable(ChessPiece* piece, position_t newpos);
     private:

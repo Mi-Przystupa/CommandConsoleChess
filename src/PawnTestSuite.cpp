@@ -45,9 +45,9 @@ SUITE(PawnSuite)
         CHECK_EQUAL(validBlackMoves.size(), shouldBeAvailable.size());
 
         bool vectorsAreSame = true; //just to initialize it
-        for (int i = 0; i < shouldBeAvailable.size(); i++){
+        for (unsigned int i = 0; i < shouldBeAvailable.size(); i++){
             vectorsAreSame = false;
-            for(int j = 0; j < validBlackMoves.size(); j++){
+            for(unsigned int j = 0; j < validBlackMoves.size(); j++){
                 if(shouldBeAvailable[i] == validBlackMoves[j] && shouldBeAvailable[i] == validBlackMoves[j]){
                     vectorsAreSame = true;
                 }
@@ -75,9 +75,9 @@ SUITE(PawnSuite)
         CHECK_EQUAL(validBlackMoves.size(), shouldBeAvailable.size());
 
         vectorsAreSame = true; //just to initialize it
-        for (int i = 0; i < shouldBeAvailable.size(); i++){
+        for (unsigned int i = 0; i < shouldBeAvailable.size(); i++){
             vectorsAreSame = false;
-            for(int j = 0; j < validBlackMoves.size(); j++){
+            for(unsigned int j = 0; j < validBlackMoves.size(); j++){
                 if(shouldBeAvailable[i] == validBlackMoves[j] && shouldBeAvailable[i] == validBlackMoves[j]){
                     vectorsAreSame = true;
                 }
@@ -103,9 +103,9 @@ SUITE(PawnSuite)
         CHECK_EQUAL(validWhiteMoves.size(), shouldBeAvailable.size());
 
         bool vectorsAreSame = true; //just to initialize it
-        for (int i = 0; i < shouldBeAvailable.size(); i++){
+        for (unsigned int i = 0; i < shouldBeAvailable.size(); i++){
             vectorsAreSame = false;
-            for(int j = 0; j < validWhiteMoves.size(); j++){
+            for(unsigned int j = 0; j < validWhiteMoves.size(); j++){
                 if(shouldBeAvailable[i] == validWhiteMoves[j] && shouldBeAvailable[i] == validWhiteMoves[j]){
                     vectorsAreSame = true;
                 }
@@ -133,9 +133,9 @@ SUITE(PawnSuite)
         CHECK_EQUAL(validWhiteMoves.size(), shouldBeAvailable.size());
 
         vectorsAreSame = true; //just to initialize it
-        for (int i = 0; i < shouldBeAvailable.size(); i++){
+        for (unsigned int i = 0; i < shouldBeAvailable.size(); i++){
             vectorsAreSame = false;
-            for(int j = 0; j < validWhiteMoves.size(); j++){
+            for(unsigned int j = 0; j < validWhiteMoves.size(); j++){
                 if(shouldBeAvailable[i] == validWhiteMoves[j] && shouldBeAvailable[i] == validWhiteMoves[j]){
                     vectorsAreSame = true;
                 }
